@@ -4,8 +4,8 @@ import ColorContext from "../contexts/ColorContext";
 import LanguageContext from "../contexts/LanguageContext";
 
 class Button extends React.Component {
-  renderText(value) {
-    return value === 'english' ? 'Submit' : 'Enviar'
+  renderText(language) {
+    return language === 'english' ? 'Submit' : 'Enviar'
   }
 
   renderButton(color) {
@@ -14,7 +14,7 @@ class Button extends React.Component {
         {/* This is the another way of getting the context info.
             This is necessary when there are 2+ Context.Providers parents*/}
         <LanguageContext.Consumer>
-          {(value) => this.renderText(value)}
+          {({ language }) => this.renderText(language)}
         </LanguageContext.Consumer>
       </button>
     );

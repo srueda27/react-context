@@ -4,7 +4,8 @@ import LanguageContext from "../contexts/LanguageContext";
 class Field extends React.Component {
   
   render() {
-    const text = this.context === 'english' ? 'Name' : 'Nombre';
+    //Once the context is linked we can access it like this.context
+    const text = this.context.language === 'english' ? 'Name' : 'Nombre';
 
     return (
       <div className="ui field">
